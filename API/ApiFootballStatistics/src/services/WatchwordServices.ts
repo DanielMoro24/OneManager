@@ -1,6 +1,6 @@
 import * as bcrypt from 'bcrypt';
 
-export class WatchwordManagement {
+export class WatchwordServices {
 
     public encryptWatchword(ww: string): string {
         const salt = bcrypt.genSaltSync(10);

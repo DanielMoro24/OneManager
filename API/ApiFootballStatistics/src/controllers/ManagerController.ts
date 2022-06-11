@@ -18,4 +18,16 @@ export class ManagerController{
         }
     }
 
+    public async saveManager(req: Request, res: Response) {
+        try {
+            if (await this.managerServices.saveManager(req.body)) {
+                res.status(202).json({ resp: "ok", result: "Manager have been saved.", error: "" });
+            } else {
+                res.status(202).json({ resp: "ko", result: "Manager have not been saved.", error: "" });
+            }
+        } catch (error) {
+            res.status(202).json({ resp: "ko", result: "ERROR", error })
+        }
+    }
+
 }

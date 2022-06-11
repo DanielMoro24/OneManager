@@ -7,5 +7,11 @@ export const managerRoutes = [
         route: '/manager',
         controller: ManagerController,
         action: 'getManager'
+    },
+    {
+        method: 'post',
+        route: '/manager/new',
+        controller: ManagerController,
+        action: 'saveManager'
     }
 ]
