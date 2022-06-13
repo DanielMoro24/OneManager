@@ -49,7 +49,7 @@ export class ManagerController{
         const reqManager: any = req.body;
         try {
             const storedManager: any = await this.managerServices.getManager(reqManager.dni);
-            if (storedManager != null) {
+            if (storedManager.dni != null) {
                 if (this.wwServices.compareWatchwords(reqManager.pass, storedManager.pass)) {
                     res.status(202).json({ resp: "ok", result: "Correct login", error: "" })
                 } else {
