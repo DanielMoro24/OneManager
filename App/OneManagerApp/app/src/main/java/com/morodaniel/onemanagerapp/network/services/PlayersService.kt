@@ -1,0 +1,4 @@
+package com.morodaniel.onemanagerapp.network.services
+
+interface PlayersService {
+}

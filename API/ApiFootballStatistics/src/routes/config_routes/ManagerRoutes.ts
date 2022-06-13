@@ -19,5 +19,11 @@ export const managerRoutes = [
         route: '/manager/update',
         controller: ManagerController,
         action: 'modifyManager'
+    },
+    {
+        method: 'post',
+        route: '/manager/login',
+        controller: ManagerController,
+        action: 'checkManager'
     }
 ]

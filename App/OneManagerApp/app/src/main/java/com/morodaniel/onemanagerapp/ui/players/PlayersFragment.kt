@@ -1,4 +1,4 @@
-package com.morodaniel.onemanagerapp.ui
+package com.morodaniel.onemanagerapp.ui.players
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
