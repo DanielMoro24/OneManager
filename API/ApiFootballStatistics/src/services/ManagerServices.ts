@@ -30,4 +30,17 @@ export class ManagerServices {
         }
         return success;
     }
+
+    public async modifyManager(newManager: any) {
+        let success: boolean = false;
+        try {
+            const result = await managerModel.replaceOne({ dni: newManager.dni }, newManager);
+            if (result != 0) {
+                success = true;
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        return success;
+    }
 }
