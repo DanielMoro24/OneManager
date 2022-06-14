@@ -1,6 +1,5 @@
 package com.morodaniel.onemanagerapp.ui
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -8,11 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentLoginBinding
 import com.morodaniel.onemanagerapp.network.NetworkConfig
-import com.morodaniel.onemanagerapp.network.models.LoginRequest
-import com.morodaniel.onemanagerapp.network.models.LoginResponse
+import com.morodaniel.onemanagerapp.network.models.login.LoginRequest
+import com.morodaniel.onemanagerapp.network.models.login.LoginResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -33,6 +31,12 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnLogin.setOnClickListener { checkLogin() }
+        binding.btnRegister.setOnClickListener { goToRegister() }
+    }
+
+    private fun goToRegister() {
+        val action = LoginFragmentDirections.actionLoginFragmentToRegisterFragment()
+        findNavController().navigate(action)
     }
 
     private fun checkLogin() {

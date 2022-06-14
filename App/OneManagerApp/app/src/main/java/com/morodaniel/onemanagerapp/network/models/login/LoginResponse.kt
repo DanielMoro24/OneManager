@@ -1,4 +1,4 @@
-package com.morodaniel.onemanagerapp.network.models
+package com.morodaniel.onemanagerapp.network.models.login
 
 
 import com.google.gson.annotations.Expose

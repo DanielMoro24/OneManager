@@ -1,8 +1,7 @@
 package com.morodaniel.onemanagerapp.network.services
 
-import android.telecom.Call
-import com.morodaniel.onemanagerapp.network.models.LoginRequest
-import com.morodaniel.onemanagerapp.network.models.LoginResponse
+import com.morodaniel.onemanagerapp.network.models.login.LoginRequest
+import com.morodaniel.onemanagerapp.network.models.login.LoginResponse
 import retrofit2.http.Body
 import retrofit2.http.POST
 

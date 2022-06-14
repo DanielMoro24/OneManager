@@ -1,4 +1,4 @@
-package com.morodaniel.onemanagerapp.ui.players
+package com.morodaniel.onemanagerapp.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,25 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentLoginBinding
-import com.morodaniel.onemanagerapp.databinding.FragmentPlayersBinding
+import com.morodaniel.onemanagerapp.databinding.FragmentRegisterBinding
 
-class PlayersFragment : Fragment() {
-    private var _binding: FragmentPlayersBinding? = null
+class RegisterFragment : Fragment() {
+    private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
-    private var dniManager: String = " "
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentPlayersBinding.inflate(inflater, container, false)
+        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
