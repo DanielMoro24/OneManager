@@ -42,7 +42,7 @@ class LoginFragment : Fragment() {
     private fun checkLogin() {
         if (binding.ptDni.text != null && binding.ptPassword.text != null){
             dniManager = binding.ptDni.text.toString()
-            NetworkConfig.loginService.checkManager(LoginRequest(binding.ptDni.text.toString(), binding.ptPassword.text.toString())).enqueue(object :
+            NetworkConfig.loginService.checkManager(loginRequest = LoginRequest(binding.ptDni.text.toString(), binding.ptPassword.text.toString())).enqueue(object :
                 Callback<LoginResponse> {
                 override fun onResponse(
                     call: Call<LoginResponse>,
