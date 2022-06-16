@@ -14,7 +14,7 @@ export class ManagerController{
 
     public async getManager(req: Request, res: Response){
         try {
-            const manager = await this.managerServices.getManager(req.params.dni);
+            const manager = await this.managerServices.getManager(req.body.dni);
             res.json({ resp: "ok", manager, error: ""});
         } catch (error) {
             res.json({ resp: "ko", manager: "", error});

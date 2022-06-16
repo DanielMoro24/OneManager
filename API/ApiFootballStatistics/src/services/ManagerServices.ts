@@ -11,13 +11,15 @@ export class ManagerServices {
     }
 
     public async getManager(dniManager: String){
-        return await managerModel.find({ dni: dniManager }).exec();
+        return await managerModel.findOne({ dni: dniManager }).exec();
     }
 
     public async saveManager(manager: any) {
         let success: boolean = false;
+        console.log(await (await this.getManager(manager.dni)));
         if (await this.getManager(manager.dni) == null) {
             try {
+                
                 manager.pass = this.wwServices.encryptWatchword(manager.pass);
                 const newManager = new managerModel(manager);
                 await newManager.save();
