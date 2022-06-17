@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentLoginBinding
 import com.morodaniel.onemanagerapp.databinding.FragmentPlayersBinding
+import com.morodaniel.onemanagerapp.extensions.mainActivity
 import com.morodaniel.onemanagerapp.network.NetworkConfig
 import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerRequest
 import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerResponse
@@ -29,7 +30,7 @@ class PlayersFragment : Fragment() {
     private var dniManager: String = " "
     private var players: List<PlayerResponse>? = null
     private val adapter = PlayersAdapter{
-
+        //ir a detail y pasarle el player
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -56,34 +57,9 @@ class PlayersFragment : Fragment() {
     }
 
     private fun getManager(dniManager: String) {
-        NetworkConfig.playersService.getManager(getManagerRequest = GetManagerRequest(dniManager)).enqueue(object :
-            Callback<GetManagerResponse> {
-            @SuppressLint("SetTextI18n")
-            override fun onResponse(
-                call: Call<GetManagerResponse>,
-                response: Response<GetManagerResponse>
-            ) {
-                if (response.isSuccessful) {
-                    val resp = response.body()
-                    if (resp != null) {
-                        if (resp.resp == "ok") {
-                            players = response.body()?.manager?.players
-                            adapter.submitList(players?.toMap())
-                        }else {
-                            Log.e("Network", "data error")
-                        }
-                    }
-                } else {
-                    Log.e("Network", "connexion error")
-                }
-            }
-
-            override fun onFailure(call: Call<GetManagerResponse>, t: Throwable) {
-                Log.e("Network", "connexion error", t)
-
-
-            }
-        })
+        players = mainActivity().sendManager(dniManager)?.players
+        adapter.submitList(players?.toMap())
     }
+
 
 }
