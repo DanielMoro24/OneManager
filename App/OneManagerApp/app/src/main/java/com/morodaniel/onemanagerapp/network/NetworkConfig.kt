@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object NetworkConfig {
-    private const val URLBase: String = "http://127.0.0.1:3000/"
+    private const val URLBase: String = "http://192.168.1.50:3000/"
 
     private val logging = HttpLoggingInterceptor().apply {
         this.level = HttpLoggingInterceptor.Level.BODY

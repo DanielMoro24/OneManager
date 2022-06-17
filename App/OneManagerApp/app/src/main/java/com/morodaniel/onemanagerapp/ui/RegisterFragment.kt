@@ -96,7 +96,7 @@ class RegisterFragment : Fragment() {
     }
 
     private fun checkEmpty(): Boolean {
-        return binding.ptConfirmPass.text != null && binding.ptDni2.text != null && binding.ptFirstname.text != null && binding.ptName.text != null && binding.ptPassword2.text != null && binding.ptTeam.text != null
+        return binding.ptConfirmPass.text.toString() != "" && binding.ptDni2.text.toString() != "" && binding.ptFirstname.text.toString() != "" && binding.ptName.text.toString() != "" && binding.ptPassword2.text.toString() != "" && binding.ptTeam.text.toString() != ""
     }
 
     private fun checkPass(): Boolean {

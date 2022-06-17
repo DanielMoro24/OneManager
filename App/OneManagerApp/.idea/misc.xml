@@ -5,8 +5,9 @@
       <map>
         <entry key="..\:/Users/danim/OneDrive/Documentos/GitHub/OneManager/App/OneManagerApp/app/src/main/res/layout/activity_main.xml" value="0.1213768115942029" />
         <entry key="..\:/Users/danim/OneDrive/Documentos/GitHub/OneManager/App/OneManagerApp/app/src/main/res/layout/fragment_login.xml" value="0.33" />
-        <entry key="..\:/Users/danim/OneDrive/Documentos/GitHub/OneManager/App/OneManagerApp/app/src/main/res/layout/fragment_players.xml" value="0.1213768115942029" />
+        <entry key="..\:/Users/danim/OneDrive/Documentos/GitHub/OneManager/App/OneManagerApp/app/src/main/res/layout/fragment_players.xml" value="0.18" />
         <entry key="..\:/Users/danim/OneDrive/Documentos/GitHub/OneManager/App/OneManagerApp/app/src/main/res/layout/fragment_register.xml" value="0.22" />
+        <entry key="..\:/Users/danim/OneDrive/Documentos/GitHub/OneManager/App/OneManagerApp/app/src/main/res/layout/item_player.xml" value="0.33" />
       </map>
     </option>
   </component>
