@@ -13,13 +13,13 @@ data class ManagerResponse(
     @Expose
     val firstname: String,
     @Expose
-    val lineups: List<LineupsResponse>,
+    val lineups: MutableList<LineupsResponse>,
     @Expose
     val name: String,
     @Expose
     val pass: String,
     @Expose
-    val players: List<PlayerResponse>,
+    val players: MutableList<PlayerResponse>,
     @Expose
     val team: String
 )

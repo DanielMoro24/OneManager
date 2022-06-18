@@ -4,11 +4,9 @@ import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerRequest
 import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerResponse
 import com.morodaniel.onemanagerapp.network.models.login.LoginRequest
 import com.morodaniel.onemanagerapp.network.models.login.LoginResponse
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface PlayersService {
-    @GET("manager")
-    fun getManager(@Body getManagerRequest: GetManagerRequest): retrofit2.Call<GetManagerResponse>
+    @GET("manager/{dni}")
+    fun getManager(@Path("dni") dni: String): retrofit2.Call<GetManagerResponse>
 }

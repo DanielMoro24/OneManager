@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     }
 
      private fun callManager(dniManager: String) {
-        NetworkConfig.playersService.getManager(getManagerRequest = GetManagerRequest(dniManager)).enqueue(object :
+        NetworkConfig.playersService.getManager(dni = dniManager).enqueue(object :
             Callback<GetManagerResponse> {
             @SuppressLint("SetTextI18n")
             override fun onResponse(

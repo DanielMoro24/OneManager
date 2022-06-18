@@ -14,5 +14,6 @@ data class PlayersObject(
     val red: Int,
     val appearences: Int,
     val minutes: Int,
-    val rating: String
+    val rating: String,
+    val pos: Int
 )

@@ -24,6 +24,12 @@
         <argument
             android:name="dniManager"
             app:argType="string" />
+        <action
+            android:id="@+id/action_playersFragment_to_addPlayersFragment"
+            app:destination="@id/addPlayersFragment" />
+        <action
+            android:id="@+id/action_playersFragment_to_detailPlayerFragment"
+            app:destination="@id/detailPlayerFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -33,5 +39,23 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPlayersFragment"
+        android:name="com.morodaniel.onemanagerapp.ui.players.AddPlayersFragment"
+        android:label="fragment_add_players"
+        tools:layout="@layout/fragment_add_players" >
+        <argument
+            android:name="dni"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPlayerFragment"
+        android:name="com.morodaniel.onemanagerapp.ui.players.DetailPlayerFragment"
+        android:label="fragment_detail_player"
+        tools:layout="@layout/fragment_detail_player" >
+        <argument
+            android:name="pos"
+            app:argType="integer" />
     </fragment>
 </navigation>

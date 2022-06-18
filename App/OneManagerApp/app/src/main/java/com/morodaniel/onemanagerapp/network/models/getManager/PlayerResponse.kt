@@ -34,7 +34,7 @@ data class PlayerResponse(
     val rating: String
 )
 
-fun PlayerResponse.toPlayersObject(): PlayersObject {
+fun PlayerResponse.toPlayersObject(pos: Int): PlayersObject {
     return PlayersObject(
         name,
         firstname,
@@ -49,10 +49,15 @@ fun PlayerResponse.toPlayersObject(): PlayersObject {
         red,
         appearences,
         minutes,
-        rating
+        rating,
+        pos
     )
 }
 
 fun List<PlayerResponse>?.toMap(): List<PlayersObject> {
-    return this?.map { it.toPlayersObject() } ?: emptyList()
+    var pos = -1
+    return this?.map {
+        pos += 1
+        it.toPlayersObject(pos)
+    } ?: emptyList()
 }
