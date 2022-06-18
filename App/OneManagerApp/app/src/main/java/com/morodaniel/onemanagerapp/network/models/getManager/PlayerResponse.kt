@@ -5,33 +5,33 @@ import com.morodaniel.onemanagerapp.objects.PlayersObject
 
 data class PlayerResponse(
     @Expose
-    val name: String,
+    var name: String,
     @Expose
-    val firstname: String,
+    var firstname: String,
     @Expose
-    val dni: String,
+    var dni: String,
     @Expose
-    val age: Int,
+    var age: Int,
     @Expose
-    val position: String,
+    var position: String,
     @Expose
-    val height: String,
+    var height: String,
     @Expose
-    val weight: String,
+    var weight: String,
     @Expose
-    val goals: Int,
+    var goals: Int,
     @Expose
-    val assists: Int,
+    var assists: Int,
     @Expose
-    val yellow: Int,
+    var yellow: Int,
     @Expose
-    val red: Int,
+    var red: Int,
     @Expose
-    val appearences: Int,
+    var appearences: Int,
     @Expose
-    val minutes: Int,
+    var minutes: Int,
     @Expose
-    val rating: String
+    var rating: String
 )
 
 fun PlayerResponse.toPlayersObject(pos: Int): PlayersObject {

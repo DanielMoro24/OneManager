@@ -29,6 +29,7 @@ class PlayersAdapter(private val onPlayerClick: (PlayersObject) -> Unit) :
         holder.binding.tvPlayerAge.text = player.age.toString()
         holder.binding.tvPlayerGoals.text = player.goals.toString()
         holder.binding.tvPlayerAssists.text = player.assists.toString()
+        holder.binding.root.setOnClickListener { onPlayerClick(player) }
     }
 
 }

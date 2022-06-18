@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentLoginBinding
 import com.morodaniel.onemanagerapp.databinding.FragmentPlayersBinding
@@ -32,7 +34,7 @@ class PlayersFragment : Fragment() {
     private var dniManager: String = " "
     private var players: MutableList<PlayerResponse>? = null
     private val adapter = PlayersAdapter{
-        val action = PlayersFragmentDirections.actionPlayersFragmentToDetailPlayerFragment(it.pos)
+        val action = PlayersFragmentDirections.actionPlayersFragmentToDetailPlayerFragment(it.pos, dniManager)
         findNavController().navigate(action)
     }
 
@@ -53,18 +55,23 @@ class PlayersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvPlayers.layoutManager = GridLayoutManager(context, 2)
+        binding.rvPlayers.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvPlayers.adapter = adapter
         getManager(dniManager)
-        binding.fbtnAddPlayers.setOnClickListener {
-            val action = PlayersFragmentDirections.actionPlayersFragmentToAddPlayersFragment(dniManager)
-            findNavController().navigate(action)
+        binding.fbtnAdd.setOnClickListener {
+            goAdd(dniManager)
         }
+        adapter.submitList(players?.toMap())
+    }
+
+
+    private fun goAdd(dniManager: String) {
+        val action2 = PlayersFragmentDirections.actionPlayersFragmentToAddPlayersFragment(dniManager)
+        findNavController().navigate(action2)
     }
 
     private fun getManager(dniManager: String) {
         players = mainActivity().sendManager(dniManager)?.players
-        adapter.submitList(players?.toMap())
     }
 
 

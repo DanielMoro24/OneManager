@@ -48,6 +48,9 @@
         <argument
             android:name="dni"
             app:argType="string" />
+        <action
+            android:id="@+id/action_addPlayersFragment_to_playersFragment"
+            app:destination="@id/playersFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailPlayerFragment"
@@ -57,5 +60,11 @@
         <argument
             android:name="pos"
             app:argType="integer" />
+        <argument
+            android:name="dni"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailPlayerFragment_to_playersFragment"
+            app:destination="@id/playersFragment" />
     </fragment>
 </navigation>
