@@ -36,7 +36,7 @@ export class ManagerServices {
     public async modifyManager(newManager: any) {
         let success: boolean = false;
         try {
-            const result = await managerModel.replaceOne({ dni: newManager.dni }, newManager);
+            const result = await managerModel.findOneAndReplace({ dni: newManager.manager.dni }, newManager.manager);
             if (result != 0) {
                 success = true;
             }

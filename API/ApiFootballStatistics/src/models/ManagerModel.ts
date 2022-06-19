@@ -1,7 +1,7 @@
 import { model, Schema } from "mongoose";
 
 const lineupsManagerSchema = new Schema({
-    journey: {type: Number},
+    journey: {type: String},
     playerOne: {type: String},
     playerTwo: {type: String},
     playerThree: {type: String},

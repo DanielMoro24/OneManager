@@ -4,7 +4,7 @@ import { ManagerController } from "../../controllers/ManagerController";
 export const managerRoutes = [
     {
         method: 'get',
-        route: '/manager',
+        route: '/manager/:dni',
         controller: ManagerController,
         action: 'getManager'
     },
