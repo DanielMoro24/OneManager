@@ -1,6 +1,8 @@
 package com.morodaniel.onemanagerapp.network.models.getManager
 
 import com.google.gson.annotations.Expose
+import com.morodaniel.onemanagerapp.objects.LineupsObject
+import com.morodaniel.onemanagerapp.objects.PlayersObject
 
 data class LineupsResponse(
     @Expose
@@ -42,3 +44,36 @@ data class LineupsResponse(
     @Expose
     val playerEighteen: String
 )
+
+fun LineupsResponse.toLineupObject(pos: Int): LineupsObject {
+    return LineupsObject(
+        journey,
+        playerOne,
+        playerTwo,
+        playerThree,
+        playerFour,
+        playerFive,
+        playerSix,
+        playerSeven,
+        playerEight,
+        playerNine,
+        playerTen,
+        playerEleven,
+        playerTwelve,
+        playerThirteen,
+        playerFourteen,
+        playerFivteen,
+        playerSixteen,
+        playerSeventeen,
+        playerEighteen,
+        pos
+    )
+}
+
+fun List<LineupsResponse>?.toMap(): List<LineupsObject> {
+    var pos = -1
+    return this?.map {
+        pos += 1
+        it.toLineupObject(pos)
+    } ?: emptyList()
+}

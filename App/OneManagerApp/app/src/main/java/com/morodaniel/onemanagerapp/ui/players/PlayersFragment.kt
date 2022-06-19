@@ -64,6 +64,11 @@ class PlayersFragment : Fragment() {
         adapter.submitList(players?.toMap())
     }
 
+    override fun onStart() {
+        super.onStart()
+        adapter.submitList(players?.toMap())
+    }
+
 
     private fun goAdd(dniManager: String) {
         val action2 = PlayersFragmentDirections.actionPlayersFragmentToAddPlayersFragment(dniManager)
@@ -71,7 +76,7 @@ class PlayersFragment : Fragment() {
     }
 
     private fun getManager(dniManager: String) {
-        players = mainActivity().sendManager(dniManager)?.players
+        players = mainActivity().sendCallManager(dniManager)?.players
     }
 
 

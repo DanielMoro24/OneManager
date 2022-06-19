@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.lineups.AddLineupsFragment" >
+
+    <Button
+        android:id="@+id/btn_add2"
+        android:layout_width="173dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="536dp"
+        android:text="Añadir"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btn_back4"
+        android:layout_width="173dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="536dp"
+        android:layout_marginEnd="16dp"
+        android:text="Volver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_twelve"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="344dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_thirteen"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="344dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 13"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_twelve"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_bench"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="Suplentes:"
+        app:layout_constraintBottom_toTopOf="@+id/pt_player_twelve"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/pt_player_seventeen"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="404dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 17"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_sixteen"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_fivteen"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="404dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_sixteen"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="404dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 16"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_fivteen"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_eighteen"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="464dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_fourteen"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="344dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 14"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_thirteen"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_five"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 5"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_four"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_nine"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="176dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 9"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_eight"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_ten"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="236dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_four"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_two"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 2"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_one"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_seven"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="176dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_eleven"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="236dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 11"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_ten"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_one"
+        android:layout_width="115dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_eight"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="176dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 8"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_seven"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_three"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="56dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 3"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_two"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_player_six"
+        android:layout_width="115dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="116dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Numero 6"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_five"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_pitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="20dp"
+        android:text="Titulares:"
+        app:layout_constraintBottom_toTopOf="@+id/pt_player_one"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/pt_journey"
+        android:layout_width="248dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="464dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Jornada"
+        app:layout_constraintStart_toEndOf="@+id/pt_player_eighteen"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

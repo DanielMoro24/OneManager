@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_playersFragment_to_detailPlayerFragment"
             app:destination="@id/detailPlayerFragment" />
+        <action
+            android:id="@+id/action_playersFragment_to_lineupsFragment"
+            app:destination="@id/lineupsFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -66,5 +69,50 @@
         <action
             android:id="@+id/action_detailPlayerFragment_to_playersFragment"
             app:destination="@id/playersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lineupsFragment"
+        android:name="com.morodaniel.onemanagerapp.ui.lineups.LineupsFragment"
+        android:label="fragment_lineups"
+        tools:layout="@layout/fragment_lineups" >
+        <argument
+            android:name="dni"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_lineupsFragment_to_playersFragment"
+            app:destination="@id/playersFragment" />
+        <action
+            android:id="@+id/action_lineupsFragment_to_addLineupsFragment"
+            app:destination="@id/addLineupsFragment" />
+        <action
+            android:id="@+id/action_lineupsFragment_to_detailLineupFragment"
+            app:destination="@id/detailLineupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addLineupsFragment"
+        android:name="com.morodaniel.onemanagerapp.ui.lineups.AddLineupsFragment"
+        android:label="fragment_add_lineups"
+        tools:layout="@layout/fragment_add_lineups" >
+        <argument
+            android:name="dni"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_addLineupsFragment_to_lineupsFragment"
+            app:destination="@id/lineupsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailLineupFragment"
+        android:name="com.morodaniel.onemanagerapp.ui.lineups.DetailLineupFragment"
+        android:label="fragment_detail_lineup"
+        tools:layout="@layout/fragment_detail_lineup" >
+        <action
+            android:id="@+id/action_detailLineupFragment_to_lineupsFragment"
+            app:destination="@id/lineupsFragment" />
+        <argument
+            android:name="dni"
+            app:argType="string" />
+        <argument
+            android:name="pos"
+            app:argType="integer" />
     </fragment>
 </navigation>

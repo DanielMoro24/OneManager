@@ -19,5 +19,6 @@ data class LineupsObject(
     val playerFivteen: String,
     val playerSixteen: String,
     val playerSeventeen: String,
-    val playerEighteen: String
+    val playerEighteen: String,
+    val pos: Int
 )

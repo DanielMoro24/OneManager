@@ -48,7 +48,7 @@ class DetailPlayerFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getManager(dniManager)
+        getManager()
         setText()
         binding.btnModify.setOnClickListener { modifyPlayer() }
         binding.btnDelete.setOnClickListener { deletePlayer() }
@@ -59,6 +59,7 @@ class DetailPlayerFragment : Fragment() {
         manager?.players?.removeAt(index)
         modifyManager(manager)
         clearText()
+        goPlayers()
     }
 
     private fun modifyPlayer() {
@@ -175,8 +176,8 @@ class DetailPlayerFragment : Fragment() {
         binding.ptWeight2.setText(manager?.players?.get(index)?.weight)
     }
 
-    private fun getManager(dniManager: String) {
-        manager = mainActivity().sendManager(dniManager)
+    private fun getManager() {
+        manager = mainActivity().sendManager()
     }
 
 

@@ -55,8 +55,12 @@ class MainActivity : AppCompatActivity() {
         })
     }
 
-     fun sendManager(dniManager: String): ManagerResponse? {
+     fun sendCallManager(dniManager: String): ManagerResponse? {
         callManager(dniManager)
+        return manager
+    }
+
+    fun sendManager(): ManagerResponse? {
         return manager
     }
 

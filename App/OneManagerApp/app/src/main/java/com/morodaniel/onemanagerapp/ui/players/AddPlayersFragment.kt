@@ -49,7 +49,7 @@ class AddPlayersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        getManager(dniManager)
+        getManager()
         binding.btnAdd.setOnClickListener { addPlayer() }
         binding.btnBack2.setOnClickListener { goPlayers() }
     }
@@ -60,8 +60,8 @@ class AddPlayersFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun getManager(dniManager: String) {
-        manager = mainActivity().sendManager(dniManager)
+    private fun getManager() {
+        manager = mainActivity().sendManager()
     }
 
     private fun addPlayer() {
