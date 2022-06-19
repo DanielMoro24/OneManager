@@ -11,8 +11,68 @@
         android:id="@+id/rv_lineups"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fbtn_add3"
+        android:layout_width="58dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="108dp"
+        android:backgroundTint="@color/white"
+        android:clickable="true"
+        android:contentDescription="to add players"
+        android:focusable="true"
+        android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="@color/black"
+        app:borderWidth="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibtn_proplayers2"
+        android:layout_width="138dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="3dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/ic_baseline_star2_2476"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_lineups2"
+        app:layout_constraintTop_toBottomOf="@+id/rv_lineups"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/ibtn_players2"
+        android:layout_width="138dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="3dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/ic_baseline_people_2433433"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ibtn_lineups2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_lineups"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/ibtn_lineups2"
+        android:layout_width="138dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="3dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/ic_baseline_sports_soccer2_245454"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ibtn_proplayers2"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_players2"
+        app:layout_constraintTop_toBottomOf="@+id/rv_lineups"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

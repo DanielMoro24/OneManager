@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -24,7 +25,8 @@ class LineupsFragment : Fragment() {
     private var dniManager: String = " "
     private var lineups: MutableList<LineupsResponse>? = null
     private val adapter = LineupsAdapter {
-
+        val action = LineupsFragmentDirections.actionLineupsFragmentToDetailLineupFragment(dniManager, it.pos)
+        findNavController().navigate(action)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +50,9 @@ class LineupsFragment : Fragment() {
         binding.rvLineups.adapter = adapter
         getManager(dniManager)
         adapter.submitList(lineups?.toMap())
+        binding.fbtnAdd3.setOnClickListener { goAdd(dniManager) }
+        binding.ibtnPlayers2.setOnClickListener { goPlayers() }
+        binding.ibtnProplayers2.setOnClickListener { goProPlayers() }
     }
 
     override fun onStart() {
@@ -57,6 +62,21 @@ class LineupsFragment : Fragment() {
 
     private fun getManager(dniManager: String) {
         lineups = mainActivity().sendCallManager(dniManager)?.lineups
+    }
+
+    private fun goAdd(dniManager: String) {
+        val action = LineupsFragmentDirections.actionLineupsFragmentToAddLineupsFragment(dniManager)
+        findNavController().navigate(action)
+    }
+
+    private fun goProPlayers() {
+        val action = LineupsFragmentDirections.actionLineupsFragmentToProfesionalPlayersFragment(dniManager)
+        findNavController().navigate(action)
+    }
+
+    private fun goPlayers() {
+        val action = LineupsFragmentDirections.actionLineupsFragmentToPlayersFragment(dniManager)
+        findNavController().navigate(action)
     }
 
 }

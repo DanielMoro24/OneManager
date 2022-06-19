@@ -33,6 +33,9 @@
         <action
             android:id="@+id/action_playersFragment_to_lineupsFragment"
             app:destination="@id/lineupsFragment" />
+        <action
+            android:id="@+id/action_playersFragment_to_profesionalPlayersFragment"
+            app:destination="@id/profesionalPlayersFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -87,6 +90,9 @@
         <action
             android:id="@+id/action_lineupsFragment_to_detailLineupFragment"
             app:destination="@id/detailLineupFragment" />
+        <action
+            android:id="@+id/action_lineupsFragment_to_profesionalPlayersFragment"
+            app:destination="@id/profesionalPlayersFragment" />
     </fragment>
     <fragment
         android:id="@+id/addLineupsFragment"
@@ -114,5 +120,20 @@
         <argument
             android:name="pos"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/profesionalPlayersFragment"
+        android:name="com.morodaniel.onemanagerapp.ui.profesionalPlayers.ProfesionalPlayersFragment"
+        android:label="fragment_profesional_players"
+        tools:layout="@layout/fragment_profesional_players" >
+        <action
+            android:id="@+id/action_profesionalPlayersFragment_to_playersFragment"
+            app:destination="@id/playersFragment" />
+        <action
+            android:id="@+id/action_profesionalPlayersFragment_to_lineupsFragment"
+            app:destination="@id/lineupsFragment" />
+        <argument
+            android:name="dni"
+            app:argType="string" />
     </fragment>
 </navigation>

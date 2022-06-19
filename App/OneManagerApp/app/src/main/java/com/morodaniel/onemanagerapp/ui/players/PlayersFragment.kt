@@ -58,10 +58,10 @@ class PlayersFragment : Fragment() {
         binding.rvPlayers.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvPlayers.adapter = adapter
         getManager(dniManager)
-        binding.fbtnAdd.setOnClickListener {
-            goAdd(dniManager)
-        }
+        binding.fbtnAdd.setOnClickListener { goAdd(dniManager) }
         adapter.submitList(players?.toMap())
+        binding.ibtnLineups.setOnClickListener { goLineups() }
+        binding.ibtnProplayers.setOnClickListener { goProPlayers() }
     }
 
     override fun onStart() {
@@ -73,6 +73,16 @@ class PlayersFragment : Fragment() {
     private fun goAdd(dniManager: String) {
         val action2 = PlayersFragmentDirections.actionPlayersFragmentToAddPlayersFragment(dniManager)
         findNavController().navigate(action2)
+    }
+
+    private fun goProPlayers() {
+        val action3 = PlayersFragmentDirections.actionPlayersFragmentToProfesionalPlayersFragment(dniManager)
+        findNavController().navigate(action3)
+    }
+
+    private fun goLineups() {
+        val action3 = PlayersFragmentDirections.actionPlayersFragmentToLineupsFragment(dniManager)
+        findNavController().navigate(action3)
     }
 
     private fun getManager(dniManager: String) {

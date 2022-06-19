@@ -1,32 +1,41 @@
 package com.morodaniel.onemanagerapp.ui.profesionalPlayers
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.morodaniel.onemanagerapp.R
+import com.morodaniel.onemanagerapp.databinding.FragmentLineupsBinding
+import com.morodaniel.onemanagerapp.databinding.FragmentProfesionalPlayersBinding
+import com.morodaniel.onemanagerapp.network.NetworkConfig
+import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerResponse
+import com.morodaniel.onemanagerapp.network.models.getManager.LineupsResponse
+import com.morodaniel.onemanagerapp.network.models.getManager.toMap
+import com.morodaniel.onemanagerapp.network.models.getProfessionalPlayers.ProfessionalPlayersResponse
+import com.morodaniel.onemanagerapp.network.models.getProfessionalPlayers.Statistic
+import com.morodaniel.onemanagerapp.ui.lineups.LineupsFragmentArgs
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ProfesionalPlayersFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ProfesionalPlayersFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private var _binding: FragmentProfesionalPlayersBinding? = null
+    private val binding get() = _binding!!
+    private val args: ProfesionalPlayersFragmentArgs by navArgs()
+    private var dniManager: String = " "
+    private var proPlayers: List<Statistic>? = null
+    private val adapter = ProfessionalPlayersAdapter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            dniManager = args.dni
         }
     }
 
@@ -34,27 +43,45 @@ class ProfesionalPlayersFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profesional_players, container, false)
+        _binding = FragmentProfesionalPlayersBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ProfesionalPlayersFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ProfesionalPlayersFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.rvProplayers.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        binding.rvProplayers.adapter = adapter
+        getProPlayers()
+    }
+
+    private fun getProPlayers() {
+        NetworkConfig.professionalPlayersService.getStatistics().enqueue(object :
+            Callback<ProfessionalPlayersResponse> {
+            override fun onResponse(
+                call: Call<ProfessionalPlayersResponse>,
+                response: Response<ProfessionalPlayersResponse>
+            ) {
+                if (response.isSuccessful) {
+                    val resp = response.body()
+                    if (resp != null) {
+                        if (resp.resp == "ok") {
+                            proPlayers = resp.statistics
+                            adapter.submitList(proPlayers)
+                        } else {
+                            Log.e("Network", "data error")
+                        }
+                    }
+                } else {
+                    Log.e("Network", "connexion error")
                 }
             }
+
+            override fun onFailure(call: Call<ProfessionalPlayersResponse>, t: Throwable) {
+                Log.e("Network", "connexion error", t)
+
+
+            }
+        })
     }
+
 }

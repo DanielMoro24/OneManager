@@ -7,69 +7,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.players.AddPlayersFragment">
 
-    <Button
-        android:id="@+id/btn_back2"
-        android:layout_width="173dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="496dp"
-        android:layout_marginEnd="12dp"
-        android:text="Volver"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/tv_appearences"
-        android:layout_width="83dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="388dp"
-        android:text="Partidos"
-        android:textAlignment="textStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_firsname2"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="108dp"
-        android:text="Apellido"
-        android:textAlignment="textStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_name2"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="Nombre"
-        android:textAlignment="textStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_dni3"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="204dp"
-        android:text="DNI"
-        android:textAlignment="textStart"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <EditText
         android:id="@+id/pt_dni3"
         android:layout_width="183dp"
         android:layout_height="49dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/tv_dni3"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_dni3"
@@ -77,247 +24,15 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/pt_name2"
-        android:layout_width="183dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_name2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_name2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name2"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/pt_firstname2"
-        android:layout_width="183dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_firsname2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_firsname2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_firsname2"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/pt_weight"
-        android:layout_width="75dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_weight"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_weight"
-        app:layout_constraintTop_toBottomOf="@+id/tv_weight"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/tv_minutes"
-        android:layout_width="83dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="379dp"
-        android:layout_marginEnd="112dp"
-        android:text="Minutos"
-        android:textAlignment="textStart"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/pt_minutes"
-        android:layout_width="183dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/tv_minutes"
-        app:layout_constraintHorizontal_bias="0.02"
-        app:layout_constraintStart_toStartOf="@+id/tv_minutes"
-        app:layout_constraintTop_toBottomOf="@+id/tv_minutes"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/tv_red"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="99dp"
-        android:layout_marginEnd="40dp"
-        android:text="Rojas"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_yellow"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="99dp"
-        android:layout_marginEnd="124dp"
-        android:text="Amarillas"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_assists2"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="40dp"
-        android:text="Asistencias"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/pt_goals"
-        android:layout_width="75dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/tv_goals2"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/tv_goals2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_goals2"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/pt_red"
-        android:layout_width="75dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/tv_red"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_red"
-        app:layout_constraintTop_toBottomOf="@+id/tv_red"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/tv_rating"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="287dp"
-        android:layout_marginEnd="40dp"
-        android:text="Nota"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_height"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="195dp"
-        android:layout_marginEnd="124dp"
-        android:text="Altura"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/pt_rating"
-        android:layout_width="75dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_rating"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_rating"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rating"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/tv_age"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="287dp"
-        android:layout_marginEnd="124dp"
-        android:text="Edad"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/pt_height"
-        android:layout_width="75dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_height"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/tv_height"
-        app:layout_constraintTop_toBottomOf="@+id/tv_height"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/pt_yellow"
-        android:layout_width="75dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/tv_yellow"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/tv_yellow"
-        app:layout_constraintTop_toBottomOf="@+id/tv_yellow"
-        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
-
-    <EditText
-        android:id="@+id/pt_age"
-        android:layout_width="75dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="number"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="@+id/tv_age"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="@+id/tv_age"
-        app:layout_constraintTop_toBottomOf="@+id/tv_age"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
-
-    <TextView
-        android:id="@+id/tv_goals2"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="124dp"
-        android:text="Goles"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_weight"
-        android:layout_width="72dp"
-        android:layout_height="19dp"
-        android:layout_marginTop="195dp"
-        android:layout_marginEnd="40dp"
-        android:text="Peso"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
         android:id="@+id/pt_assists"
         android:layout_width="75dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="16dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/tv_assists2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_assists2"
@@ -325,52 +40,418 @@
         tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="119dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Edad"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/tv_position2"
         android:layout_width="83dp"
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="296dp"
+        android:layout_marginTop="340dp"
+        android:fontFamily="@font/aldrich"
         android:text="Posición"
         android:textAlignment="textStart"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_add"
+        android:layout_width="173dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="552dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Añadir"
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/btn_back2"
+        android:layout_width="173dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="552dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Volver"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_age"
+        android:layout_width="75dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_age"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/tv_age"
+        app:layout_constraintTop_toBottomOf="@+id/tv_age"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_rating"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="340dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Nota"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_height"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="119dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Altura"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_goals2"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="119dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Goles"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pt_weight"
+        android:layout_width="75dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_weight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_weight"
+        app:layout_constraintTop_toBottomOf="@+id/tv_weight"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_appearences"
+        android:layout_width="183dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="number"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_appearences"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_appearences"
+        app:layout_constraintTop_toBottomOf="@+id/tv_appearences"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_red"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Rojas"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_appearences"
+        android:layout_width="83dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="432dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Partidos"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_assists2"
+        android:layout_width="85dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Asistencias"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pt_height"
+        android:layout_width="75dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_height"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/tv_height"
+        app:layout_constraintTop_toBottomOf="@+id/tv_height"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tv_name2"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Nombre"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_weight"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="248dp"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Peso"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/pt_position"
         android:layout_width="183dp"
         android:layout_height="49dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="textPersonName"
         android:minHeight="48dp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/tv_position2"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tv_position2"
         app:layout_constraintTop_toBottomOf="@+id/tv_position2"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <Button
-        android:id="@+id/btn_add"
-        android:layout_width="173dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="496dp"
-        android:text="Añadir"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+    <EditText
+        android:id="@+id/pt_red"
+        android:layout_width="75dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_red"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_red"
+        app:layout_constraintTop_toBottomOf="@+id/tv_red"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/pt_appearences"
+        android:id="@+id/pt_minutes"
         android:layout_width="183dp"
         android:layout_height="49dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="@+id/tv_appearences"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tv_appearences"
-        app:layout_constraintTop_toBottomOf="@+id/tv_appearences"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_minutes"
+        app:layout_constraintHorizontal_bias="0.02"
+        app:layout_constraintStart_toStartOf="@+id/tv_minutes"
+        app:layout_constraintTop_toBottomOf="@+id/tv_minutes"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/pt_firstname2"
+        android:layout_width="183dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_firsname2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_firsname2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_firsname2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_yellow"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="152dp"
+        android:layout_marginEnd="119dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Amarillas"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_dni3"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="248dp"
+        android:fontFamily="@font/aldrich"
+        android:text="DNI"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_minutes"
+        android:layout_width="83dp"
+        android:layout_height="19dp"
+        android:layout_marginTop="432dp"
+        android:layout_marginEnd="104dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Minutos"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pt_rating"
+        android:layout_width="75dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_rating"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_rating"
+        app:layout_constraintTop_toBottomOf="@+id/tv_rating"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_yellow"
+        android:layout_width="75dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_yellow"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/tv_yellow"
+        app:layout_constraintTop_toBottomOf="@+id/tv_yellow"
+        tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/tv_firsname2"
+        android:layout_width="72dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="152dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Apellido"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/pt_goals"
+        android:layout_width="75dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_goals2"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="@+id/tv_goals2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_goals2"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/pt_name2"
+        android:layout_width="183dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:fontFamily="@font/aldrich"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/tv_name2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv_name2"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name2"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageView
+        android:id="@+id/iv_logo3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="172dp"
+        android:layout_marginTop="628dp"
+        android:layout_marginEnd="154dp"
+        android:src="@drawable/soccer_player__negra"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

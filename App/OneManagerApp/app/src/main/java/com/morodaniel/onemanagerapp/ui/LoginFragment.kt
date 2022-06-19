@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentLoginBinding
+import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.network.NetworkConfig
 import com.morodaniel.onemanagerapp.network.models.login.LoginRequest
 import com.morodaniel.onemanagerapp.network.models.login.LoginResponse
@@ -30,6 +32,7 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.ivLogo.imageUrl(R.drawable.soccer_player__negra)
         binding.btnLogin.setOnClickListener { checkLogin() }
         binding.btnRegister.setOnClickListener { goToRegister() }
     }

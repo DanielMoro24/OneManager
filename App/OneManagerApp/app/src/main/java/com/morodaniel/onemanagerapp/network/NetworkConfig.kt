@@ -1,9 +1,6 @@
 package com.morodaniel.onemanagerapp.network
 
-import com.morodaniel.onemanagerapp.network.services.LoginService
-import com.morodaniel.onemanagerapp.network.services.ManagerService
-import com.morodaniel.onemanagerapp.network.services.PlayersService
-import com.morodaniel.onemanagerapp.network.services.RegisterService
+import com.morodaniel.onemanagerapp.network.services.*
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -32,4 +29,6 @@ object NetworkConfig {
     val loginService: LoginService = retrofit.create(LoginService::class.java)
     val registerService: RegisterService = retrofit.create(RegisterService::class.java)
     val managerService: ManagerService = retrofit.create(ManagerService::class.java)
+    val professionalPlayersService: ProfessionalPlayersService = retrofit.create(
+        ProfessionalPlayersService::class.java)
 }

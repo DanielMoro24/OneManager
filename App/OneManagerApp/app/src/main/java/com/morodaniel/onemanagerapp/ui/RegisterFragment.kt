@@ -7,7 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentRegisterBinding
+import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.network.NetworkConfig
 import com.morodaniel.onemanagerapp.network.models.register.LineupsRegisterRequest
 import com.morodaniel.onemanagerapp.network.models.register.PlayerRegisterRequest
@@ -34,6 +36,7 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.ivLogo2.imageUrl(R.drawable.soccer_player__negra)
         binding.btnBack.setOnClickListener { goBack() }
         binding.btnConfirm.setOnClickListener { checkRegister() }
     }

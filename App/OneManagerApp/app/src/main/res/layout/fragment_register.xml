@@ -13,6 +13,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/tv_pass"
         app:layout_constraintHorizontal_bias="0.0"
@@ -26,6 +27,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="@+id/tv_confirmPass"
         app:layout_constraintHorizontal_bias="0.0"
@@ -39,8 +41,10 @@
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="300dp"
+        android:fontFamily="@font/aldrich"
         android:text="Apellido"
         android:textAlignment="textStart"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -50,6 +54,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_name"
@@ -64,6 +69,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_firstname"
@@ -78,6 +84,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_dni2"
@@ -92,6 +99,7 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:ems="10"
+        android:fontFamily="@font/aldrich"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="@+id/tv_team"
@@ -106,8 +114,10 @@
         android:layout_height="19dp"
         android:layout_marginTop="192dp"
         android:layout_marginEnd="124dp"
+        android:fontFamily="@font/aldrich"
         android:text="DNI"
         android:textAlignment="textStart"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -117,8 +127,10 @@
         android:layout_height="19dp"
         android:layout_marginTop="300dp"
         android:layout_marginEnd="124dp"
+        android:fontFamily="@font/aldrich"
         android:text="Equipo"
         android:textAlignment="textStart"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -128,8 +140,10 @@
         android:layout_height="19dp"
         android:layout_marginTop="408dp"
         android:layout_marginEnd="22dp"
+        android:fontFamily="@font/aldrich"
         android:text="Confirmar contraseña"
         android:textAlignment="textStart"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -139,19 +153,23 @@
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="192dp"
+        android:fontFamily="@font/aldrich"
         android:text="Nombre"
         android:textAlignment="textStart"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_pass"
-        android:layout_width="83dp"
+        android:layout_width="95dp"
         android:layout_height="19dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="408dp"
+        android:fontFamily="@font/aldrich"
         android:text="Contraseña"
         android:textAlignment="textStart"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -169,23 +187,25 @@
 
     <Button
         android:id="@+id/btn_confirm"
-        android:layout_width="0dp"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="516dp"
+        android:fontFamily="@font/aldrich"
         android:text="Confirmar"
-        app:layout_constraintEnd_toEndOf="@+id/pt_password2"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="@+id/pt_password2"
-        app:layout_constraintTop_toBottomOf="@+id/pt_password2" />
+        app:cornerRadius="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_back"
-        android:layout_width="0dp"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="516dp"
+        android:layout_marginEnd="12dp"
+        android:fontFamily="@font/aldrich"
         android:text="Volver"
-        app:layout_constraintEnd_toEndOf="@+id/pt_confirmPass"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/pt_confirmPass"
-        app:layout_constraintTop_toBottomOf="@+id/pt_confirmPass" />
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
