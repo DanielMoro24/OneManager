@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentDetailLineupBinding
+import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.extensions.mainActivity
 import com.morodaniel.onemanagerapp.network.NetworkConfig
 import com.morodaniel.onemanagerapp.network.models.getManager.ManagerResponse
@@ -44,6 +46,7 @@ class DetailLineupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.ivLogo6.imageUrl(R.drawable.soccer_player__negra)
         getManager()
         setText()
         binding.btnModify2.setOnClickListener { modifyLineup() }

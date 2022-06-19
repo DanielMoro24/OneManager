@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -52,7 +53,10 @@ class ProfesionalPlayersFragment : Fragment() {
         binding.rvProplayers.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvProplayers.adapter = adapter
         getProPlayers()
+        binding.ibtnLineups3.setOnClickListener { goLineups() }
+        binding.ibtnPlayers3.setOnClickListener { goPlayers() }
     }
+
 
     private fun getProPlayers() {
         NetworkConfig.professionalPlayersService.getStatistics().enqueue(object :
@@ -82,6 +86,16 @@ class ProfesionalPlayersFragment : Fragment() {
 
             }
         })
+    }
+
+    private fun goPlayers() {
+        val action = ProfesionalPlayersFragmentDirections.actionProfesionalPlayersFragmentToPlayersFragment(dniManager)
+        findNavController().navigate(action)
+    }
+
+    private fun goLineups() {
+        val action = ProfesionalPlayersFragmentDirections.actionProfesionalPlayersFragmentToLineupsFragment(dniManager)
+        findNavController().navigate(action)
     }
 
 }

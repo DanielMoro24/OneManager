@@ -11,8 +11,51 @@
         android:id="@+id/rv_proplayers"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/ibtn_proplayers3"
+        android:layout_width="138dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="3dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/ic_baseline_star2_2476"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_lineups3"
+        app:layout_constraintTop_toBottomOf="@+id/rv_proplayers"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/ibtn_players3"
+        android:layout_width="138dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="3dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/ic_baseline_people_2433433"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ibtn_lineups3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rv_proplayers"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/ibtn_lineups3"
+        android:layout_width="138dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="3dp"
+        android:backgroundTint="@color/black"
+        android:src="@drawable/ic_baseline_sports_soccer2_245454"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/ibtn_proplayers3"
+        app:layout_constraintStart_toEndOf="@+id/ibtn_players3"
+        app:layout_constraintTop_toBottomOf="@+id/rv_proplayers"
+        tools:ignore="SpeakableTextPresentCheck" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

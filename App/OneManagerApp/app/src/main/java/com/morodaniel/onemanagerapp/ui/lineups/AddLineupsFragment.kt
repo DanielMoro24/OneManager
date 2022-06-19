@@ -2,24 +2,21 @@ package com.morodaniel.onemanagerapp.ui.lineups
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentAddLineupsBinding
-import com.morodaniel.onemanagerapp.databinding.FragmentAddPlayersBinding
+import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.extensions.mainActivity
 import com.morodaniel.onemanagerapp.network.NetworkConfig
 import com.morodaniel.onemanagerapp.network.models.getManager.LineupsResponse
 import com.morodaniel.onemanagerapp.network.models.getManager.ManagerResponse
-import com.morodaniel.onemanagerapp.network.models.getManager.PlayerResponse
 import com.morodaniel.onemanagerapp.network.models.modifyManager.ModifyManagerRequest
 import com.morodaniel.onemanagerapp.network.models.modifyManager.ModifyManagerResponse
-import com.morodaniel.onemanagerapp.ui.players.AddPlayersFragmentArgs
-import com.morodaniel.onemanagerapp.ui.players.AddPlayersFragmentDirections
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,6 +46,7 @@ class AddLineupsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.ivLogo5.imageUrl(R.drawable.soccer_player__negra)
         getManager()
         binding.btnAdd2.setOnClickListener { addLineup() }
         binding.btnBack4.setOnClickListener { goPlayers() }
