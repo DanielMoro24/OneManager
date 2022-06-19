@@ -6,43 +6,43 @@ import com.morodaniel.onemanagerapp.objects.PlayersObject
 
 data class LineupsResponse(
     @Expose
-    val journey: String,
+    var journey: String,
     @Expose
-    val playerOne: String,
+    var playerOne: String,
     @Expose
-    val playerTwo: String,
+    var playerTwo: String,
     @Expose
-    val playerThree: String,
+    var playerThree: String,
     @Expose
-    val playerFour: String,
+    var playerFour: String,
     @Expose
-    val playerFive: String,
+    var playerFive: String,
     @Expose
-    val playerSix: String,
+    var playerSix: String,
     @Expose
-    val playerSeven: String,
+    var playerSeven: String,
     @Expose
-    val playerEight: String,
+    var playerEight: String,
     @Expose
-    val playerNine: String,
+    var playerNine: String,
     @Expose
-    val playerTen: String,
+    var playerTen: String,
     @Expose
-    val playerEleven: String,
+    var playerEleven: String,
     @Expose
-    val playerTwelve: String,
+    var playerTwelve: String,
     @Expose
-    val playerThirteen: String,
+    var playerThirteen: String,
     @Expose
-    val playerFourteen: String,
+    var playerFourteen: String,
     @Expose
-    val playerFivteen: String,
+    var playerFivteen: String,
     @Expose
-    val playerSixteen: String,
+    var playerSixteen: String,
     @Expose
-    val playerSeventeen: String,
+    var playerSeventeen: String,
     @Expose
-    val playerEighteen: String
+    var playerEighteen: String
 )
 
 fun LineupsResponse.toLineupObject(pos: Int): LineupsObject {
