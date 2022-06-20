@@ -1,5 +1,6 @@
 package com.morodaniel.onemanagerapp.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -25,13 +26,14 @@ class LoginFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvError.visibility = View.INVISIBLE
         binding.ivLogo.imageUrl(R.drawable.soccer_player__negra)
         binding.btnLogin.setOnClickListener { checkLogin() }
         binding.btnRegister.setOnClickListener { goToRegister() }
@@ -42,8 +44,9 @@ class LoginFragment : Fragment() {
         findNavController().navigate(action)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun checkLogin() {
-        if (binding.ptDni.text != null && binding.ptPassword.text != null){
+        if (binding.ptDni.text.toString() != "" && binding.ptPassword.text.toString() != "  "){
             dniManager = binding.ptDni.text.toString()
             NetworkConfig.loginService.checkManager(loginRequest = LoginRequest(binding.ptDni.text.toString(), binding.ptPassword.text.toString())).enqueue(object :
                 Callback<LoginResponse> {
@@ -57,22 +60,26 @@ class LoginFragment : Fragment() {
                             val action = LoginFragmentDirections.actionLoginFragmentToPlayersFragment(dniManager)
                             findNavController().navigate(action)
                         }else{
-                            //aviso de datos incorrectos
+                            binding.tvError.text = "El DNI o la contraseña son incorrectos."
+                            binding.tvError.visibility = View.VISIBLE
                         }
                     } else {
                         Log.e("Network", "connexion error")
+                        binding.tvError.text = "Ha ocurrido un error."
+                        binding.tvError.visibility = View.VISIBLE
                     }
                 }
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Log.e("Network", "connexion error", t)
-
-
+                    binding.tvError.text = "El DNI o la contraseña son incorrectos."
+                    binding.tvError.visibility = View.VISIBLE
                 }
             })
 
         }else{
-            //aviso de rellenar campos
+            binding.tvError.text = "Rellene todos los campos."
+            binding.tvError.visibility = View.VISIBLE
         }
 
     }

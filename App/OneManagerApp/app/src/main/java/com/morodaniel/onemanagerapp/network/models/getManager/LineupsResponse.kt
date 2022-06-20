@@ -2,7 +2,7 @@ package com.morodaniel.onemanagerapp.network.models.getManager
 
 import com.google.gson.annotations.Expose
 import com.morodaniel.onemanagerapp.objects.LineupsObject
-import com.morodaniel.onemanagerapp.objects.PlayersObject
+
 
 data class LineupsResponse(
     @Expose

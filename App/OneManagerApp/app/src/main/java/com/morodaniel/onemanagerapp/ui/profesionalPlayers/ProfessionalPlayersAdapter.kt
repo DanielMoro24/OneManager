@@ -26,7 +26,7 @@ class ProfessionalPlayersAdapter() : ListAdapter<Statistic, ProfessionalPlayersA
         val proPlayer = getItem(position)
         holder.binding.ivLogo9.imageUrl(R.drawable.soccer_player__negra)
         holder.binding.tvPlayerAge2.text = proPlayer.player.age.toString() + " años"
-        holder.binding.tvPlayerName3.text = proPlayer.player.name + " " + proPlayer.player.firstname
+        holder.binding.tvPlayerName3.text = proPlayer.player.name
         holder.binding.tvPlayerMatch.text = proPlayer.statistics[0].games.appearences.toString()
         holder.binding.tvPlayerGoals2.text = proPlayer.statistics[0].goals.total.toString()
         holder.binding.tvPlayerAssists2.text = proPlayer.statistics[0].goals.assists.toString()

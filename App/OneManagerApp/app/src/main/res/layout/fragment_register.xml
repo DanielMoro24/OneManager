@@ -7,6 +7,39 @@
     android:layout_height="match_parent"
     tools:context=".ui.RegisterFragment" >
 
+    <TextView
+        android:id="@+id/tv_error2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="186dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="119dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Error"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="186dp"
+        android:layout_marginEnd="185dp"
+        android:layout_marginBottom="119dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Message"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/pt_password2"
         android:layout_width="183dp"
@@ -189,7 +222,7 @@
         android:id="@+id/btn_confirm"
         android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="516dp"
         android:fontFamily="@font/aldrich"
         android:text="Confirmar"
@@ -202,7 +235,7 @@
         android:layout_width="183dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="516dp"
-        android:layout_marginEnd="12dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/aldrich"
         android:text="Volver"
         app:cornerRadius="20dp"

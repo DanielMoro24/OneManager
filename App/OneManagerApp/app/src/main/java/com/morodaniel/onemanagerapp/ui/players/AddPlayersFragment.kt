@@ -1,25 +1,21 @@
 package com.morodaniel.onemanagerapp.ui.players
 
 import android.annotation.SuppressLint
-import android.net.Network
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentAddPlayersBinding
-import com.morodaniel.onemanagerapp.databinding.FragmentPlayersBinding
 import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.extensions.mainActivity
 import com.morodaniel.onemanagerapp.network.NetworkConfig
-import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerResponse
 import com.morodaniel.onemanagerapp.network.models.getManager.ManagerResponse
 import com.morodaniel.onemanagerapp.network.models.getManager.PlayerResponse
-import com.morodaniel.onemanagerapp.network.models.getManager.toMap
 import com.morodaniel.onemanagerapp.network.models.modifyManager.ModifyManagerRequest
 import com.morodaniel.onemanagerapp.network.models.modifyManager.ModifyManagerResponse
 import retrofit2.Call
@@ -43,13 +39,15 @@ class AddPlayersFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAddPlayersBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvMessage2.visibility = View.INVISIBLE
+        binding.tvError3.visibility = View.INVISIBLE
         binding.ivLogo3.imageUrl(R.drawable.soccer_player__negra)
         getManager()
         binding.btnAdd.setOnClickListener { addPlayer() }
@@ -66,6 +64,7 @@ class AddPlayersFragment : Fragment() {
         manager = mainActivity().sendManager()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun addPlayer() {
         if (checkEmpty()) {
             if (checkNumbers()) {
@@ -89,11 +88,14 @@ class AddPlayersFragment : Fragment() {
                 )
                 modifyManager(manager)
             } else {
-                //error hay un número que no es numero
+                binding.tvMessage2.visibility = View.INVISIBLE
+                binding.tvError3.text = "Los campos edad, goles, asistencias, amarillas, rojas, partidos y minutos, tienen que ser números"
+                binding.tvError3.visibility = View.VISIBLE
             }
         } else {
-            //algo esta vacio
-
+            binding.tvMessage2.visibility = View.INVISIBLE
+            binding.tvError3.text = "Rellene todos los campos."
+            binding.tvError3.visibility = View.VISIBLE
         }
 
     }
@@ -101,6 +103,7 @@ class AddPlayersFragment : Fragment() {
     private fun modifyManager(manager: ManagerResponse?) {
         NetworkConfig.managerService.modifyManager(ModifyManagerRequest(manager = manager)).enqueue(object :
             Callback<ModifyManagerResponse> {
+            @SuppressLint("SetTextI18n")
             override fun onResponse(
                 call: Call<ModifyManagerResponse>,
                 response: Response<ModifyManagerResponse>
@@ -110,19 +113,30 @@ class AddPlayersFragment : Fragment() {
                     if (resp != null) {
                         if (resp.resp == "ok") {
                             clearText()
+                            binding.tvError3.visibility = View.INVISIBLE
+                            binding.tvMessage2.text = "El jugador se ha añadido correctamente."
+                            binding.tvMessage2.visibility = View.VISIBLE
                         }else {
                             Log.e("Network", "data error")
+                            binding.tvMessage2.visibility = View.INVISIBLE
+                            binding.tvError3.text = "Error de inesperado."
+                            binding.tvError3.visibility = View.VISIBLE
                         }
                     }
                 } else {
                     Log.e("Network", "connexion error")
+                    binding.tvMessage2.visibility = View.INVISIBLE
+                    binding.tvError3.text = "Error de conexión."
+                    binding.tvError3.visibility = View.VISIBLE
                 }
             }
 
+            @SuppressLint("SetTextI18n")
             override fun onFailure(call: Call<ModifyManagerResponse>, t: Throwable) {
                 Log.e("Network", "connexion error", t)
-
-
+                binding.tvMessage2.visibility = View.INVISIBLE
+                binding.tvError3.text = "Error de conexión."
+                binding.tvError3.visibility = View.VISIBLE
             }
         })
 

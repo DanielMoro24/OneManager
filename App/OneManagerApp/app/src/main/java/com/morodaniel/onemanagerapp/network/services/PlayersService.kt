@@ -1,10 +1,8 @@
 package com.morodaniel.onemanagerapp.network.services
 
-import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerRequest
 import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerResponse
-import com.morodaniel.onemanagerapp.network.models.login.LoginRequest
-import com.morodaniel.onemanagerapp.network.models.login.LoginResponse
-import retrofit2.http.*
+import retrofit2.http.GET
+import retrofit2.http.Path
 
 interface PlayersService {
     @GET("manager/{dni}")

@@ -7,12 +7,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.ItemLineupBinding
-import com.morodaniel.onemanagerapp.databinding.ItemPlayerBinding
 import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.objects.LineupsObject
-import com.morodaniel.onemanagerapp.objects.PlayersObject
-import com.morodaniel.onemanagerapp.ui.players.PlayerItemCallback
-import com.morodaniel.onemanagerapp.ui.players.PlayersAdapter
 
 class LineupsAdapter(private val onLineupClick: (LineupsObject) -> Unit) :
     ListAdapter<LineupsObject, LineupsAdapter.ViewHolder>(LineupItemCallback()) {

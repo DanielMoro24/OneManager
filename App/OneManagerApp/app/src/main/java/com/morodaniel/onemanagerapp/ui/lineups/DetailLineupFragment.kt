@@ -1,5 +1,6 @@
 package com.morodaniel.onemanagerapp.ui.lineups
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -39,13 +40,15 @@ class DetailLineupFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDetailLineupBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvMessage5.visibility = View.INVISIBLE
+        binding.tvError6.visibility = View.INVISIBLE
         binding.ivLogo6.imageUrl(R.drawable.soccer_player__negra)
         getManager()
         setText()
@@ -72,6 +75,7 @@ class DetailLineupFragment : Fragment() {
         NetworkConfig.managerService.modifyManager(ModifyManagerRequest(manager = manager))
             .enqueue(object :
                 Callback<ModifyManagerResponse> {
+                @SuppressLint("SetTextI18n")
                 override fun onResponse(
                     call: Call<ModifyManagerResponse>,
                     response: Response<ModifyManagerResponse>
@@ -80,24 +84,35 @@ class DetailLineupFragment : Fragment() {
                         val resp = response.body()
                         if (resp != null) {
                             if (resp.resp == "ok") {
-                                //se Ha modificado
+                                binding.tvError6.visibility = View.INVISIBLE
+                                binding.tvMessage5.text = "El jugador se ha modificado correctamente."
+                                binding.tvMessage5.visibility = View.VISIBLE
                             } else {
                                 Log.e("Network", "data error")
+                                binding.tvMessage5.visibility = View.INVISIBLE
+                                binding.tvError6.text = "Error de inesperado."
+                                binding.tvError6.visibility = View.VISIBLE
                             }
                         }
                     } else {
                         Log.e("Network", "connexion error")
+                        binding.tvMessage5.visibility = View.INVISIBLE
+                        binding.tvError6.text = "Error de conexión."
+                        binding.tvError6.visibility = View.VISIBLE
                     }
                 }
 
+                @SuppressLint("SetTextI18n")
                 override fun onFailure(call: Call<ModifyManagerResponse>, t: Throwable) {
                     Log.e("Network", "connexion error", t)
-
-
+                    binding.tvMessage5.visibility = View.INVISIBLE
+                    binding.tvError6.text = "Error de conexión."
+                    binding.tvError6.visibility = View.VISIBLE
                 }
             })
     }
 
+    @SuppressLint("SetTextI18n")
     private fun modifyLineup() {
         if (checkEmpty()) {
             manager?.lineups?.get(index)?.journey = binding.ptJourney2.text.toString()
@@ -122,8 +137,9 @@ class DetailLineupFragment : Fragment() {
 
             modifyManager(manager)
         } else {
-            //algo esta vacio
-
+            binding.tvMessage5.visibility = View.INVISIBLE
+            binding.tvError6.text = "Rellene todos los campos."
+            binding.tvError6.visibility = View.VISIBLE
         }
 
     }

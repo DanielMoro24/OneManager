@@ -7,6 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.lineups.AddLineupsFragment" >
 
+    <TextView
+        android:id="@+id/tv_message4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="191dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="63dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Message"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_error5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="191dp"
+        android:layout_marginEnd="180dp"
+        android:layout_marginBottom="63dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Error"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <ImageView
         android:id="@+id/iv_logo5"
         android:layout_width="49dp"

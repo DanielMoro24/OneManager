@@ -1,11 +1,11 @@
 package com.morodaniel.onemanagerapp.ui.lineups
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -40,22 +40,19 @@ class AddLineupsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentAddLineupsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvMessage4.visibility = View.INVISIBLE
+        binding.tvError5.visibility = View.INVISIBLE
         binding.ivLogo5.imageUrl(R.drawable.soccer_player__negra)
         getManager()
         binding.btnAdd2.setOnClickListener { addLineup() }
         binding.btnBack4.setOnClickListener { goPlayers() }
-        binding.ptJourney.setOnClickListener { setTextEmpty() }
-    }
-
-    private fun setTextEmpty() {
-        binding.ptJourney.text.clear()
     }
 
     private fun goPlayers() {
@@ -64,6 +61,7 @@ class AddLineupsFragment : Fragment() {
         findNavController().navigate(action)
     }
 
+    @SuppressLint("SetTextI18n")
     private fun addLineup() {
         if (checkEmpty()) {
             manager?.lineups?.add(
@@ -92,14 +90,16 @@ class AddLineupsFragment : Fragment() {
 
             modifyManager(manager)
         } else {
-            //algo esta vacio
-
+            binding.tvMessage4.visibility = View.INVISIBLE
+            binding.tvError5.text = "Rellene todos los campos."
+            binding.tvError5.visibility = View.VISIBLE
         }
     }
 
     private fun modifyManager(manager: ManagerResponse?) {
         NetworkConfig.managerService.modifyManager(ModifyManagerRequest(manager = manager)).enqueue(object :
             Callback<ModifyManagerResponse> {
+            @SuppressLint("SetTextI18n")
             override fun onResponse(
                 call: Call<ModifyManagerResponse>,
                 response: Response<ModifyManagerResponse>
@@ -109,19 +109,30 @@ class AddLineupsFragment : Fragment() {
                     if (resp != null) {
                         if (resp.resp == "ok") {
                             clearText()
-                        }else {
+                            binding.tvError5.visibility = View.INVISIBLE
+                            binding.tvMessage4.text = "La alineación se ha añadido correctamente."
+                            binding.tvMessage4.visibility = View.VISIBLE
+                        } else {
                             Log.e("Network", "data error")
+                            binding.tvMessage4.visibility = View.INVISIBLE
+                            binding.tvError5.text = "Error de inesperado."
+                            binding.tvError5.visibility = View.VISIBLE
                         }
                     }
                 } else {
                     Log.e("Network", "connexion error")
+                    binding.tvMessage4.visibility = View.INVISIBLE
+                    binding.tvError5.text = "Error de conexión."
+                    binding.tvError5.visibility = View.VISIBLE
                 }
             }
 
+            @SuppressLint("SetTextI18n")
             override fun onFailure(call: Call<ModifyManagerResponse>, t: Throwable) {
                 Log.e("Network", "connexion error", t)
-
-
+                binding.tvMessage4.visibility = View.INVISIBLE
+                binding.tvError5.text = "Error de conexión."
+                binding.tvError5.visibility = View.VISIBLE
             }
         })
 
@@ -156,4 +167,5 @@ class AddLineupsFragment : Fragment() {
     private fun getManager() {
         manager = mainActivity().sendManager()
     }
+
 }

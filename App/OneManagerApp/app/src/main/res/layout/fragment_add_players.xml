@@ -7,6 +7,38 @@
     android:layout_height="match_parent"
     tools:context=".ui.players.AddPlayersFragment">
 
+    <TextView
+        android:id="@+id/tv_message2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="197dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="68dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Message"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_error3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="197dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginBottom="68dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Error"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <EditText
         android:id="@+id/pt_dni3"
         android:layout_width="183dp"

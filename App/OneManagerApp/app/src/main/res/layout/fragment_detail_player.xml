@@ -8,6 +8,38 @@
     tools:context=".ui.players.DetailPlayerFragment" >
 
     <TextView
+        android:id="@+id/tv_error4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="190dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="31dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Error"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_message3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="190dp"
+        android:layout_marginEnd="181dp"
+        android:layout_marginBottom="31dp"
+        android:fontFamily="@font/aldrich"
+        android:text="Message"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_green_light"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/tv_name3"
         android:layout_width="72dp"
         android:layout_height="19dp"

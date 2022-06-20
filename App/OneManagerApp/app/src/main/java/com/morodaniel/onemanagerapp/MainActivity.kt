@@ -1,12 +1,11 @@
 package com.morodaniel.onemanagerapp
 
 import android.annotation.SuppressLint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.morodaniel.onemanagerapp.databinding.ActivityMainBinding
 import com.morodaniel.onemanagerapp.network.NetworkConfig
-import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerRequest
 import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerResponse
 import com.morodaniel.onemanagerapp.network.models.getManager.ManagerResponse
 import retrofit2.Call

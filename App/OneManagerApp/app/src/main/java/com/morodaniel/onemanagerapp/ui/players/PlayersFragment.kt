@@ -1,31 +1,18 @@
 package com.morodaniel.onemanagerapp.ui.players
 
-import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.morodaniel.onemanagerapp.R
-import com.morodaniel.onemanagerapp.databinding.FragmentLoginBinding
 import com.morodaniel.onemanagerapp.databinding.FragmentPlayersBinding
 import com.morodaniel.onemanagerapp.extensions.mainActivity
-import com.morodaniel.onemanagerapp.network.NetworkConfig
-import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerRequest
-import com.morodaniel.onemanagerapp.network.models.getManager.GetManagerResponse
 import com.morodaniel.onemanagerapp.network.models.getManager.PlayerResponse
 import com.morodaniel.onemanagerapp.network.models.getManager.toMap
-import com.morodaniel.onemanagerapp.objects.PlayersObject
-import com.morodaniel.onemanagerapp.ui.LoginFragmentDirections
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class PlayersFragment : Fragment() {
     private var _binding: FragmentPlayersBinding? = null
@@ -43,12 +30,14 @@ class PlayersFragment : Fragment() {
         arguments?.let {
             dniManager = args.dniManager
         }
+        getManager(dniManager)
+
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentPlayersBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -57,16 +46,12 @@ class PlayersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.rvPlayers.layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvPlayers.adapter = adapter
-        getManager(dniManager)
-        binding.fbtnAdd.setOnClickListener { goAdd(dniManager) }
         adapter.submitList(players?.toMap())
+
+
+        binding.fbtnAdd.setOnClickListener { goAdd(dniManager) }
         binding.ibtnLineups.setOnClickListener { goLineups() }
         binding.ibtnProplayers.setOnClickListener { goProPlayers() }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        adapter.submitList(players?.toMap())
     }
 
 

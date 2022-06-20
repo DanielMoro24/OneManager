@@ -1,5 +1,6 @@
 package com.morodaniel.onemanagerapp.ui
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -29,28 +30,35 @@ class RegisterFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.tvMessage.visibility = View.INVISIBLE
+        binding.tvError2.visibility = View.INVISIBLE
         binding.ivLogo2.imageUrl(R.drawable.soccer_player__negra)
         binding.btnBack.setOnClickListener { goBack() }
         binding.btnConfirm.setOnClickListener { checkRegister() }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun checkRegister() {
         if (checkEmpty()) {
             if (checkPass()) {
                 saveManager()
             } else {
                 resetPassLabels()
-                // salta error
+                binding.tvMessage.visibility = View.INVISIBLE
+                binding.tvError2.text = "Las contraseñas no coinciden."
+                binding.tvError2.visibility = View.VISIBLE
             }
         } else {
-            // salta error
+            binding.tvMessage.visibility = View.INVISIBLE
+            binding.tvError2.text = "Rellene todos los campos."
+            binding.tvError2.visibility = View.VISIBLE
         }
     }
 
@@ -67,6 +75,7 @@ class RegisterFragment : Fragment() {
             )
         ).enqueue(object :
             Callback<RegisterResponse> {
+            @SuppressLint("SetTextI18n")
             override fun onResponse(
                 call: Call<RegisterResponse>,
                 response: Response<RegisterResponse>
@@ -75,18 +84,29 @@ class RegisterFragment : Fragment() {
                     val resp = response.body()?.resp
                     if (resp.equals("ok")) {
                         resetLabels()
+                        binding.tvError2.visibility = View.INVISIBLE
+                        binding.tvMessage.text = "Su usuario ha sido registrado."
+                        binding.tvMessage.visibility = View.VISIBLE
                     } else {
-                        //aviso de datos incorrectos
+                        binding.tvMessage.visibility = View.INVISIBLE
+                        binding.tvError2.text = "Ya existe un usuario con este DNI."
+                        binding.tvError2.visibility = View.VISIBLE
                     }
                 } else {
                     Log.e("Network", "connexion error")
+                    binding.tvMessage.visibility = View.INVISIBLE
+                    binding.tvError2.visibility = View.VISIBLE
+                    binding.tvError2.text = "Error de conexión."
+                    binding.tvError2.visibility = View.VISIBLE
                 }
             }
 
+            @SuppressLint("SetTextI18n")
             override fun onFailure(call: Call<RegisterResponse>, t: Throwable) {
                 Log.e("Network", "connexion error", t)
-
-
+                binding.tvMessage.visibility = View.INVISIBLE
+                binding.tvError2.text = "Error de conexión."
+                binding.tvError2.visibility = View.VISIBLE
             }
         })
     }

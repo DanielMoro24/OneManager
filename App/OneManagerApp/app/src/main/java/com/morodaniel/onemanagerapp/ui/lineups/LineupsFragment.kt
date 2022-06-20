@@ -1,22 +1,18 @@
 package com.morodaniel.onemanagerapp.ui.lineups
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.FragmentLineupsBinding
-import com.morodaniel.onemanagerapp.databinding.FragmentPlayersBinding
 import com.morodaniel.onemanagerapp.extensions.mainActivity
 import com.morodaniel.onemanagerapp.network.models.getManager.LineupsResponse
-import com.morodaniel.onemanagerapp.network.models.getManager.PlayerResponse
 import com.morodaniel.onemanagerapp.network.models.getManager.toMap
-import com.morodaniel.onemanagerapp.ui.players.PlayersFragmentArgs
 
 class LineupsFragment : Fragment() {
     private var _binding: FragmentLineupsBinding? = null
@@ -39,7 +35,7 @@ class LineupsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentLineupsBinding.inflate(inflater, container, false)
         return binding.root
     }
