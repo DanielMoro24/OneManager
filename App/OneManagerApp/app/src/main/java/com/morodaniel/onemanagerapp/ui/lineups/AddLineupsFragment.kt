@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -50,7 +51,11 @@ class AddLineupsFragment : Fragment() {
         getManager()
         binding.btnAdd2.setOnClickListener { addLineup() }
         binding.btnBack4.setOnClickListener { goPlayers() }
+        binding.ptJourney.setOnClickListener { setTextEmpty() }
+    }
 
+    private fun setTextEmpty() {
+        binding.ptJourney.text.clear()
     }
 
     private fun goPlayers() {

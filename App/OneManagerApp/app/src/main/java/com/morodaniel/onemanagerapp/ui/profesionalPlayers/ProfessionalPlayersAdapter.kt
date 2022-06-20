@@ -5,7 +5,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.ItemProfessionalPlayerBinding
+import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.network.models.getProfessionalPlayers.Statistic
 import com.morodaniel.onemanagerapp.ui.lineups.LineupsAdapter
 
@@ -22,7 +24,13 @@ class ProfessionalPlayersAdapter() : ListAdapter<Statistic, ProfessionalPlayersA
 
     override fun onBindViewHolder(holder: ProfessionalPlayersAdapter.ViewHolder, position: Int) {
         val proPlayer = getItem(position)
-
+        holder.binding.ivLogo9.imageUrl(R.drawable.soccer_player__negra)
+        holder.binding.tvPlayerAge2.text = proPlayer.player.age.toString() + " años"
+        holder.binding.tvPlayerName3.text = proPlayer.player.name + " " + proPlayer.player.firstname
+        holder.binding.tvPlayerMatch.text = proPlayer.statistics[0].games.appearences.toString()
+        holder.binding.tvPlayerGoals2.text = proPlayer.statistics[0].goals.total.toString()
+        holder.binding.tvPlayerAssists2.text = proPlayer.statistics[0].goals.assists.toString()
+        holder.binding.tvPlayerPosition2.text = proPlayer.statistics[0].games.position
     }
 
 }

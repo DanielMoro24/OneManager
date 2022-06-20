@@ -3,19 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="120dp"
+    android:background="#DFD5D5"
+    android:backgroundTint="#DDDADA"
+    android:paddingStart="5dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="5dp"
+    android:paddingBottom="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:backgroundTint="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_logo8"
+                android:layout_width="49dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="181dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="181dp"
+                android:src="@drawable/soccer_player__negra"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_journey"
@@ -24,7 +46,10 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="43dp"
                 android:layout_marginBottom="43dp"
+                android:fontFamily="@font/aldrich"
                 android:text="journey"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/tv_journeytext"
                 app:layout_constraintTop_toTopOf="parent"
@@ -37,8 +62,11 @@
                 android:layout_marginStart="76dp"
                 android:layout_marginTop="43dp"
                 android:layout_marginBottom="43dp"
+                android:fontFamily="@font/aldrich"
                 android:text="Jornada:"
                 android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

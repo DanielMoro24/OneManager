@@ -6,7 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.ItemPlayerBinding
+import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.objects.PlayersObject
 
 class PlayersAdapter(private val onPlayerClick: (PlayersObject) -> Unit) :
@@ -24,11 +26,12 @@ class PlayersAdapter(private val onPlayerClick: (PlayersObject) -> Unit) :
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val player = getItem(position)
-        holder.binding.tvPlayerName.text = player.name + " " + player.firstname
+        holder.binding.tvPlayerName.text = player.name
         holder.binding.tvPlayerPosition.text = player.position
-        holder.binding.tvPlayerAge.text = player.age.toString()
+        holder.binding.tvPlayerAge.text = player.age.toString() + " años"
         holder.binding.tvPlayerGoals.text = player.goals.toString()
         holder.binding.tvPlayerAssists.text = player.assists.toString()
+        holder.binding.ivLogo7.imageUrl(R.drawable.soccer_player__negra)
         holder.binding.root.setOnClickListener { onPlayerClick(player) }
     }
 

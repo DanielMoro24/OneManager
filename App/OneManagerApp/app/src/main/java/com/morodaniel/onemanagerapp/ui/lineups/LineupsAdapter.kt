@@ -5,8 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.morodaniel.onemanagerapp.R
 import com.morodaniel.onemanagerapp.databinding.ItemLineupBinding
 import com.morodaniel.onemanagerapp.databinding.ItemPlayerBinding
+import com.morodaniel.onemanagerapp.extensions.imageUrl
 import com.morodaniel.onemanagerapp.objects.LineupsObject
 import com.morodaniel.onemanagerapp.objects.PlayersObject
 import com.morodaniel.onemanagerapp.ui.players.PlayerItemCallback
@@ -26,6 +28,7 @@ class LineupsAdapter(private val onLineupClick: (LineupsObject) -> Unit) :
 
     override fun onBindViewHolder(holder: LineupsAdapter.ViewHolder, position: Int) {
         val lineup = getItem(position)
+        holder.binding.ivLogo8.imageUrl(R.drawable.soccer_player__negra)
         holder.binding.tvJourney.text = lineup.journey
         holder.binding.root.setOnClickListener { onLineupClick(lineup) }
     }

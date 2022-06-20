@@ -3,19 +3,153 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="120dp"
+    android:background="#DFD5D5"
+    android:backgroundTint="#DFD5D5"
+    android:paddingStart="5dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="5dp"
+    android:paddingBottom="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="100dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <ImageView
+                android:id="@+id/iv_logo9"
+                android:layout_width="49dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="181dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="181dp"
+                android:src="@drawable/soccer_player__negra"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_player_name3"
+                android:layout_width="100dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Name"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_player_position2"
+                android:layout_width="100dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Position"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_player_name3" />
+
+            <TextView
+                android:id="@+id/tv_player_age2"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Age"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_player_position2" />
+
+            <TextView
+                android:id="@+id/tv_player_goals2"
+                android:layout_width="54dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Goals"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/tv_goals4"
+                app:layout_constraintStart_toStartOf="@+id/tv_goals4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_goals4" />
+
+            <TextView
+                android:id="@+id/tv_assists4"
+                android:layout_width="85dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Asistencias"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/tv_goals4"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_player_assists2"
+                android:layout_width="85dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/aldrich"
+                android:text="PlayerAssist"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/tv_assists4"
+                app:layout_constraintStart_toStartOf="@+id/tv_assists4"
+                app:layout_constraintTop_toBottomOf="@+id/tv_assists4" />
+
+            <TextView
+                android:id="@+id/tv_goals4"
+                android:layout_width="54dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="220dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Goles"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_match"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginStart="136dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Partidos"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_player_match"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Partidos"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/tv_match"
+                app:layout_constraintStart_toStartOf="@+id/tv_match"
+                app:layout_constraintTop_toBottomOf="@+id/tv_match" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

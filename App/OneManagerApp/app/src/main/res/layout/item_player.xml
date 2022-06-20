@@ -3,11 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="100dp">
+    android:layout_height="120dp"
+    android:clipToPadding="false"
+    android:paddingStart="5dp"
+    android:paddingTop="10dp"
+    android:paddingEnd="5dp"
+    android:paddingBottom="10dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="100dp"
+        android:backgroundTint="#FFFFFF"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -19,78 +28,107 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv_player_assists"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="320dp"
-                android:layout_marginTop="12dp"
-                android:text="PlayerAssist"
-                android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_goals" />
-
-            <TextView
-                android:id="@+id/tv_assists"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="8dp"
-                android:text="Asistencias"
-                android:textAlignment="center"
-                app:layout_constraintStart_toEndOf="@+id/tv_goals"
-                app:layout_constraintTop_toBottomOf="@+id/tv_player_name" />
-
-            <TextView
-                android:id="@+id/tv_player_name"
-                android:layout_width="288dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="Name"
+            <ImageView
+                android:id="@+id/iv_logo7"
+                android:layout_width="49dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="181dp"
+                android:layout_marginTop="72dp"
+                android:layout_marginEnd="181dp"
+                android:src="@drawable/soccer_player__negra"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_player_position"
-                android:layout_width="210dp"
-                android:layout_height="21dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="Position"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_player_name" />
-
-            <TextView
-                android:id="@+id/tv_player_age"
-                android:layout_width="124dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="Age"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_player_position" />
 
             <TextView
                 android:id="@+id/tv_goals"
                 android:layout_width="54dp"
                 android:layout_height="18dp"
-                android:layout_marginStart="248dp"
+                android:layout_marginStart="204dp"
                 android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
                 android:text="Goles"
                 android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_player_assists"
+                android:layout_width="85dp"
+                android:layout_height="18dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/aldrich"
+                android:text="PlayerAssist"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/tv_assists"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_assists"
+                app:layout_constraintTop_toBottomOf="@+id/tv_assists" />
+
+            <TextView
+                android:id="@+id/tv_assists"
+                android:layout_width="85dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Asistencias"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toEndOf="@+id/tv_goals"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_player_name"
+                android:layout_width="100dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Name"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_player_age"
+                android:layout_width="80dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Age"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_player_position" />
+
+            <TextView
+                android:id="@+id/tv_player_position"
+                android:layout_width="100dp"
+                android:layout_height="21dp"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/aldrich"
+                android:text="Position"
+                android:textColor="@color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_player_name" />
 
             <TextView
                 android:id="@+id/tv_player_goals"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="236dp"
+                android:layout_width="54dp"
+                android:layout_height="18dp"
                 android:layout_marginTop="12dp"
-                android:text="PlayerGoals"
+                android:fontFamily="@font/aldrich"
+                android:text="Goals"
                 android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="@+id/tv_goals"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/tv_goals"
                 app:layout_constraintTop_toBottomOf="@+id/tv_goals" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
