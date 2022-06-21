@@ -135,5 +135,23 @@
         <argument
             android:name="dni"
             app:argType="string" />
+        <action
+            android:id="@+id/action_profesionalPlayersFragment_to_detailProfessionalPlayerFragment"
+            app:destination="@id/detailProfessionalPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailProfessionalPlayerFragment"
+        android:name="com.morodaniel.onemanagerapp.ui.profesionalPlayers.DetailProfessionalPlayerFragment"
+        android:label="fragment_detail_professional_player"
+        tools:layout="@layout/fragment_detail_professional_player" >
+        <argument
+            android:name="pos"
+            app:argType="integer" />
+        <argument
+            android:name="dni"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_detailProfessionalPlayerFragment_to_profesionalPlayersFragment"
+            app:destination="@id/profesionalPlayersFragment" />
     </fragment>
 </navigation>
